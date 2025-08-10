@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Presupuesto — PmHour</title>
+  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/styles/temas.css">
+  <link rel="stylesheet" href="../assets/styles/main.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="../index.html">
+        <img src="../assets/img/logo_pmhour_4.png" alt="PmHour" class="logo-img">
+        <span>PmHour</span>
+      </a>
+      <nav class="menu" aria-label="Principal">
+        <a href="../index.html">Inicio</a>
+        <a href="./galeria.html">Galería</a>
+        <a href="./presupuesto.html" aria-current="page">Presupuesto</a>
+        <a href="./contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container presupuesto">
+    <h1 class="page-title">Solicitar presupuesto</h1>
+
+    <form id="formPresupuesto" novalidate>
+      <fieldset class="form-grid">
+        <legend class="sr-only">Datos del presupuesto</legend>
+
+      
+        <div class="field">
+          <label for="nombre">Nombre completo *</label>
+          <input id="nombre" name="nombre" type="text" required
+                 minlength="2" maxlength="60"
+                 pattern="^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+(?:[ '\-][A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+)*$"
+                 placeholder="Ej. Pablo Muñoz" >
+          <small class="hint">Solo letras y espacios.</small>
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+      
+        <div class="field">
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" required inputmode="email" placeholder="tucorreo@ejemplo.com" >
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        
+        <div class="field">
+          <label for="telefono">Teléfono *</label>
+          <input id="telefono" name="telefono" type="tel" required
+                 inputmode="tel"
+                 pattern="^(?:\+34\s?)?(6|7|8|9)\d{8}$"
+                 placeholder="+34 6XXXXXXXX" >
+          <small class="hint">Formato español. Admite +34 opcional.</small>
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+       
+        <div class="field">
+          <label for="modelo">Modelo de interés *</label>
+          <select id="modelo" name="modelo" required>
+            <option value="" selected disabled>Selecciona un modelo</option>
+            <option>Audemars Piguet Royal Oak Perpetual Calendar</option>
+            <option>Piaget Altiplano</option>
+            <option>Greubel Forsey Double Balancier Convexe</option>
+            <option>Cartier Ronde Solo</option>
+            <option>Richard Mille RM67</option>
+            <option>Tudor Bay GMT</option>
+          </select>
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+      
+        <div class="field">
+          <label for="importe">Presupuesto aproximado (€) *</label>
+          <input id="importe" name="importe" type="number" required
+                 min="500" max="200000" step="10" placeholder="Ej. 5000" >
+          <small class="hint">Entre 500 y 200.000 €</small>
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        
+        <div class="field">
+          <label for="fecha">Fecha deseada</label>
+          <input id="fecha" name="fecha" type="date" >
+          <small class="hint">Opcional</small>
+        </div>
+
+       
+        <div class="field field-full">
+          <label>Servicios</label>
+          <div class="checks">
+            <label><input type="checkbox" name="servicios" value="asesoria"> Asesoría de compra</label>
+            <label><input type="checkbox" name="servicios" value="autenticacion"> Autenticación</label>
+            <label><input type="checkbox" name="servicios" value="revision"> Revisión/Mantenimiento</label>
+          </div>
+        </div>
+
+      
+        <div class="field field-full">
+          <label for="info">Información adicional (opcional)</label>
+          <textarea id="info" name="info" rows="5" maxlength="1000"
+                    placeholder="Cuéntanos detalles, preferencias de tamaño, material, etc."></textarea>
+        </div>
+
+      
+        <div class="field field-full">
+          <label class="terms">
+            <input type="checkbox" id="acepto" name="acepto" required>
+            Acepto la política de privacidad *
+          </label>
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <div class="actions field-full">
+          <button class="btn gold" type="submit">Solicitar</button>
+          <button class="btn" type="reset">Limpiar</button>
+        </div>
+      </fieldset>
+    </form>
+    
+    <div id="resultado" class="resultado" hidden aria-live="polite">
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2025 PmHour · Síguenos en
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a> ·
+      <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a> ·
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </footer>
+
+  <script src="../js/presupuesto.js" defer></script>
+</body>
+</html>
