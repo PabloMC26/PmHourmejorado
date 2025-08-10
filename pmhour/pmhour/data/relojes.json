@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "titulo": "Rolex Submariner Date de 40mm",
+    "precio": 25719,
+    "img":"../assets/img/Rolex1.jpg"
+  },
+  {
+    "id": 2,
+    "titulo": "Hublot Spring of Big Bang de 42 mm 2017",
+    "precio": 17500,
+    "img": "../assets/img/Hublot.jpg"
+  },
+  {
+    "id": 3,
+    "titulo": "Rolex Sky-Dweller de 42mm 2025",
+    "precio": 47551,
+    "img": "../assets/img/Rolex2.jpg"
+  },
+  {
+    "id": 4,
+    "titulo": "Patek Philippe Grand Complications Celestial de 44mm 2024",
+    "precio": 565762,
+    "img": "../assets/img/PatekPhilippe.jpg"
+  },
+  {
+    "id": 5,
+    "titulo": "Cartier Santos de 38mm",
+    "precio": 6336,
+    "img": "../assets/img/Cartier.jpg"
+  },
+  {
+    "id": 6,
+    "titulo": "Rolex Cosmograph de 40mm",
+    "precio": 68245,
+    "img": "../assets/img/Rolex3.jpg"
+  }
+]
