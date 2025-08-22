@@ -1,0 +1,26 @@
+:root {
+  
+  --bg: #0b0b0c;
+  --surface: #131316;
+  --text: #f5f5f7;
+  --muted: #b8b8be;
+
+  
+  --accent: #d4af37;   
+  --accent-2: #c09a2e; 
+
+  --card: #17171b;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+
+:root.luxury-light {
+  --bg: #ffffff;
+  --surface: #f9f9fb;
+  --text: #1b1b1f;
+  --muted: #4b4b52;
+  --accent: #b88913;
+  --accent-2: #d6b253;
+  --card: #ffffff;
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+}
