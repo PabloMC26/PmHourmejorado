@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galería — PmHour</title>
+  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/styles/temas.css">
+  <link rel="stylesheet" href="../assets/styles/main.css">
+
+  <link rel="preload" href="./assets/styles/main.css" as="style">
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="../index.html">
+        <img src="../assets/img/logo_pmhour_4.png" alt="PmHour" class="logo-img" width="48" height="48">
+        <span>PmHour</span>
+      </a>
+      <nav class="menu" aria-label="Principal">
+        <a href="../index.html">Inicio</a>
+        <a href="./galeria.html" aria-current="page">Galería</a>
+        <a href="./presupuesto.html">Presupuesto</a>
+        <a href="./contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+  <!-- SECTION: Título -->
+  <section class="section" id="galeria" aria-labelledby="galeriaTitle">
+    <h1 id="galeriaTitle" class="page-title">Galería</h1>
+
+    <div id="galleryGrid" aria-live="polite"></div>
+
+    <hr class="section-separator">
+  </section>
+
+</main>
+
+  <!-- Footer (versión /views/) -->
+  <footer class="footer">
+    <div class="container footer-grid" role="contentinfo">
+      <section class="ft-brand">
+         <h2 class="sr-only">Marca</h2>
+        <a class="brand" href="../index.html">
+          <img src="../assets/img/logo_pmhour_4.png" alt="PmHour" width="64" height="64">
+          <span>PmHour</span>
+        </a>
+        <p class="muted">Relojes de lujo · Antequera (Málaga)</p>
+        <p class="muted">© 2025 PmHour</p>
+      </section>
+
+      <nav class="ft-links" aria-label="Enlaces legales">
+        <h3 class="ft-title">Legal</h3>
+        <ul>
+          <li><a href="./aviso-legal.html">Aviso legal</a></li>
+          <li><a href="./privacidad.html">Política de privacidad</a></li>
+          <li><a href="./cookies.html">Política de cookies</a></li>
+        </ul>
+      </nav>
+
+      <section class="ft-contact">
+        <h3 class="ft-title">Contacto</h3>
+        <ul>
+         <li><a href="mailto:atencionacliente@pmhour.com">atencionalcliente@pmhour.com</a></li>
+        <li><a href="tel:+34600223344">+34 600 22 33 44</a></li>
+        <li>c/Antequera local 5, Antequera (Málaga)</li>
+        </ul>
+        <div class="ft-social">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </section>
+    </div>
+  </footer>
+
+ 
+  <script src="../js/galeria.js" defer></script>
+
+  <script>
+  (function(){
+    const h = document.querySelector('.header');
+    if(!h) return;
+    const toggle = () => h.classList.toggle('is-scrolled', window.scrollY > 8);
+    toggle(); window.addEventListener('scroll', toggle, {passive:true});
+  })();
+</script>
+
+</body>
+</html>

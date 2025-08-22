@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto — PmHour</title>
+  
+  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/styles/temas.css">
+  <link rel="stylesheet" href="../assets/styles/main.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css">
+
+  <link rel="preload" href="./assets/styles/main.css" as="style">
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="../index.html">
+        <img src="../assets/img/logo_pmhour_4.png" alt="PmHour" class="logo-img">
+        <span>PmHour</span>
+      </a>
+      <nav class="menu" aria-label="Principal">
+        <a href="../index.html">Inicio</a>
+        <a href="../views/galeria.html">Galería</a>
+        <a href="../views/presupuesto.html">Presupuesto</a>
+        <a href="../views/contacto.html" aria-current="page">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container contacto">
+
+      <h1 class="page-title">Contacto</h1>
+
+  <!-- SECTION: Datos de contacto -->
+  <section class="contact-info" aria-labelledby="infoTitle">
+    <h2 id="infoTitle">Datos de contacto</h2>
+    <ul>
+      <li><strong>Dirección:</strong> C/Antequera local 5, Antequera (Málaga)</li>
+      <li><strong>Email:</strong> <a href="mailto:atencionalcliente@pmhour.com">atencionalcliente@pmhour.com</a></li>
+      <li><strong>Teléfono:</strong> <a href="tel:+34600223344">+34 600 22 33 44</a></li>
+    </ul>
+
+    <hr class="section-separator">
+
+  </section>
+
+    
+      <p class="lead">Visítanos en Antequera o deja que calculemos la ruta desde tu ubicación.</p>
+  
+
+    <!-- SECTION: Mapa -->
+    <section class="contact-map" aria-label="Mapa y ruta">
+  <h2 class="sr-only">Mapa y ruta</h2>
+  <div id="map" class="map" role="region" aria-label="Mapa con ruta hacia PmHour"></div>
+  <div id="routePanel" class="route-panel" aria-live="polite"></div>
+      <p class="hint">Para ver la ruta, permite el acceso a tu ubicación cuando el navegador te lo pida.</p>
+    </section>
+
+    <hr class="section-separator">
+
+  </main>
+
+<footer class="footer">
+  <div class="container footer-grid" role="contentinfo">
+
+    <section class="ft-brand">
+       <h2 class="sr-only">Marca</h2>
+      <a class="brand" href="../index.html">
+        <img src="../assets/img/logo_pmhour_4.png" alt="PmHour" width="64" height="64">
+        <span>PmHour</span>
+      </a>
+      <p class="muted">Relojes de lujo · Antequera (Málaga)</p>
+      <p class="muted">© 2025 PmHour</p>
+    </section>
+
+    <nav class="ft-links" aria-label="Enlaces legales">
+      <h3 class="ft-title">Legal</h3>
+      <ul>
+        <li><a href="./aviso-legal.html">Aviso legal</a></li>
+        <li><a href="./privacidad.html">Política de privacidad</a></li>
+        <li><a href="./cookies.html">Política de cookies</a></li>
+      </ul>
+    </nav>
+
+    <section class="ft-contact">
+      <h3 class="ft-title">Contacto</h3>
+      <ul>
+        <li><a href="mailto:atencionacliente@pmhour.com">atencionalcliente@pmhour.com</a></li>
+        <li><a href="tel:+34600223344">+34 600 22 33 44</a></li>
+        <li>c/Antequera local 5, Antequera (Málaga)</li>
+      </ul>
+      <div class="ft-social">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </section>
+  </div>
+</footer>
+
+ <!-- LIBRERÍAS DEL MAPA -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+  <script src="../js/contacto.js" defer></script>
+
+  <script>
+  (function(){
+    const h = document.querySelector('.header');
+    if(!h) return;
+    const toggle = () => h.classList.toggle('is-scrolled', window.scrollY > 8);
+    toggle(); window.addEventListener('scroll', toggle, {passive:true});
+  })();
+</script>
+
+</body>
+</html>

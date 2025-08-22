@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Presupuesto — PmHour</title>
+  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/styles/temas.css">
+  <link rel="stylesheet" href="../assets/styles/main.css">
+
+  <link rel="preload" href="./assets/styles/main.css" as="style">
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="../index.html">
+        <img src="../assets/img/logo_pmhour_4.png" alt="PmHour" class="logo-img">
+        <span>PmHour</span>
+      </a>
+      <nav class="menu" aria-label="Principal">
+        <a href="../index.html">Inicio</a>
+        <a href="../views/galeria.html">Galería</a>
+        <a href="../views/presupuesto.html" aria-current="page">Presupuesto</a>
+        <a href="../views/contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container presupuesto">
+    <h1 class="page-title">Solicitar presupuesto</h1>
+
+    <form id="formPresu" novalidate>
+      <fieldset class="form-grid">
+        <legend class="sr-only">Datos del presupuesto</legend>
+
+        <!-- Datos de contacto -->
+        <div class="field">
+          <label for="nombre">Nombre completo *</label>
+          <input id="nombre" name="nombre" type="text" required
+                 minlength="2" maxlength="60"
+                 pattern="^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+(?:[ '\-][A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+)*$"
+                 placeholder="Ej. Pablo Muñoz">
+          <small class="hint">Solo letras y espacios.</small>
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <div class="field">
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" required placeholder="tucorreo@ejemplo.com" >
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <div class="field">
+          <label for="telefono">Teléfono *</label>
+          <input id="telefono" name="telefono" type="tel" required
+                 pattern="^(?:\+34\s?)?(6|7|8|9)\d{8}$"
+                 placeholder="+34 6XXXXXXXX">
+          <small class="hint">Formato español. Admite +34 opcional.</small>
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <div class="field">
+          <label for="modelo">Modelo de interés *</label>
+          <select id="modelo" name="modelo" required>
+            <option value="" selected disabled>Selecciona un modelo</option>
+            <option>Audemars Piguet Royal Oak Perpetual Calendar</option>
+            <option>Piaget Altiplano</option>
+            <option>Greubel Forsey Double Balancier Convexe</option>
+            <option>Cartier Ronde Solo</option>
+            <option>Richard Mille RM67</option>
+            <option>Tudor Bay GMT</option>
+          </select>
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <!-- OPCIONES DE PRESUPUESTO -->
+        <div class="field field-full">
+          <fieldset>
+            <legend>Opciones</legend>
+
+            <!-- Producto con precio -->
+            <label for="producto">Producto</label>
+            <select id="producto" name="producto" required>
+              <option value="" disabled selected>Elige un modelo</option>
+              <option value="Audemars Piguet"  data-precio="660057">Audemars Piguet Oak Perpetual Calendar— 660.057€</option>
+              <option value="Richard Mille RM67 " data-precio="569238">Richard Mille RM 67 de 42mm 2022 — 569.238€</option>
+              <option value="Cartier" data-precio="6050">Cartier Ronde Solo — 6.050€</option>
+            </select>
+
+            <!-- Plazo (meses) afecta al precio -->
+            <label for="plazo">Plazo (meses)</label>
+            <input id="plazo" name="plazo" type="number" min="1" max="36" value="1" required>
+            <small class="lead">Descuento automático: ≥12 meses −10%, ≥6 meses −5%.</small>
+
+            <!-- Extras que suman -->
+            <fieldset>
+              <legend>Extras</legend>
+              <div class="form-row">
+                <label><input type="checkbox" name="extra" value="grabado" data-precio="150"> Grabado (+150€)</label>
+                <label><input type="checkbox" name="extra" value="correa"  data-precio="200"> Correa extra (+200€)</label>
+                <label><input type="checkbox" name="extra" value="caja"    data-precio="250"> Caja regalo (+250€)</label>
+                <label><input type="checkbox" name="extra" value="express" data-precio="15">  Envío exprés (+15€)</label>
+              </div>
+            </fieldset>
+
+            <!-- Total dinámico -->
+            <div class="section">
+              <h2>Total: <strong id="total">0,00 €</strong></h2>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Campos adicionales -->
+        <div class="field">
+          <label for="fecha">Fecha deseada</label>
+          <input id="fecha" name="fecha" type="date">
+          <small class="hint">Opcional</small>
+        </div>
+
+        <div class="field field-full">
+          <label>Servicios</label>
+          <div class="checks">
+            <label><input type="checkbox" name="servicios" value="asesoria"> Asesoría de compra</label>
+            <label><input type="checkbox" name="servicios" value="autenticacion"> Autenticación</label>
+            <label><input type="checkbox" name="servicios" value="revision"> Revisión/Mantenimiento</label>
+          </div>
+        </div>
+
+        <div class="field field-full">
+          <label class="terms">
+            <input type="checkbox" id="acepto" name="acepto" required>
+            Acepto la política de privacidad *
+          </label>
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <div class="actions field-full">
+          <button class="btn gold" type="submit">Solicitar</button>
+          <button class="btn" type="reset">Limpiar</button>
+        </div>
+      </fieldset>
+    </form>
+
+    <div id="resultado" class="resultado" hidden aria-live="polite"></div>
+  </main>
+
+  <footer class="footer">
+  <div class="container footer-grid" role="contentinfo">
+    <section class="ft-brand">
+      <h2 class="sr-only">Marca</h2>
+      <a class="brand" href="../index.html">
+        <img src="../assets/img/logo_pmhour_4.png" alt="PmHour" width="64" height="64">
+        <span>PmHour</span>
+      </a>
+      <p class="muted">Relojes de lujo · Antequera (Málaga)</p>
+      <p class="muted">© 2025 PmHour</p>
+    </section>
+
+    <nav class="ft-links" aria-label="Enlaces legales">
+      <h3 class="ft-title">Legal</h3>
+      <ul>
+        <li><a href="../views/aviso-legal.html">Aviso legal</a></li>
+        <li><a href="../views/privacidad.html">Política de privacidad</a></li>
+        <li><a href="../views/cookies.html">Política de cookies</a></li>
+      </ul>
+    </nav>
+
+    <section class="ft-contact">
+      <h3 class="ft-title">Contacto</h3>
+      <ul>
+        <li><a href="mailto:atencionacliente@pmhour.com">atencionalcliente@pmhour.com</a></li>
+        <li><a href="tel:+34600223344">+34 600 22 33 44</a></li>
+        <li>c/Antequera local 5, Antequera (Málaga)</li>
+      </ul>
+      <div class="ft-social">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </section>
+  </div>
+</footer>
+
+
+  <script src="../js/presupuesto.js" defer></script>
+
+  <script>
+  (function(){
+    const h = document.querySelector('.header');
+    if(!h) return;
+    const toggle = () => h.classList.toggle('is-scrolled', window.scrollY > 8);
+    toggle(); window.addEventListener('scroll', toggle, {passive:true});
+  })();
+</script>
+
+</body>
+</html>
